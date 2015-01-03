@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">  // HTML5 history in angularjs.
+    <title><%= title %></title>
+    <% include includes/header %>
+  </head>
+  <body ng-controller="QuizzController" layout="column">
+      <md-whiteframe class="md-whiteframe-z1" layout="column" layout-align="center center">
+        <h2 class="title">Register for the quiz</h2>
+        <form name="registerForm" ng-submit="register()" novalidate>
+            <div layout="row">
+              <div>
+                  <md-text-float ng-model="name" label="Name" required>
+              </div>
+              <div class="rk-error-message" ng-cloak>
+                  {{message}}
+              </div>
+              <div ng-show="registerForm.name.$invalid && !registerForm.name.$pristine">
+                  <span ng-bind="messages[0]" class="rk-error-message"></span>
+              </div>
+            </div>
+            <div>
+                <md-button class="md-raised md-primary">Submit</md-button>
+            </div>
+        </form>
+      </md-whiteframe>
+      <% include includes/footer %>
+  </body>
+</html>

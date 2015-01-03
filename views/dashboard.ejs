@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quizz - Dashboard</title>
+    <% include includes/header %>
+  </head>
+  <body ng-controller="DashboardController" layout="column">
+    <md-whiteframe class="md-whiteframe-z1" layout="column" layout-align="center center">    
+      <h2 class="title">Register for the quiz</h2>
+      <form>
+        <div>        
+            <md-button class="md-raised md-primary" ng-disabled="started" ng-click="startQuizz()">Start quizz </md-button>
+        </div>
+        <div ng-show="started && question >= 0">Current question: {{question+1}} of {{questions.length}}</div>
+        <div>
+            <md-button class="md-raised md-primary" ng-disabled="!started || ended || question <= 0" ng-click="previousQuestion()">Previous question</md-button>
+            <md-button class="md-raised md-primary" ng-disabled="!started || ended || question >= questions.length-1" ng-click="nextQuestion()">Next question </md-button>
+        </div>
+        <div layout="row" layout-align="start end">
+            <div>
+                <md-text-float ng-model="goQuestion" label="Goto question" required size="3" ng-maxlength="3"/>
+            </div>
+            <div>
+                <md-button class="md-raised md-primary" ng-disabled="!started || ended" ng-click="gotoQuestion()">Go</md-button>
+            </div>    
+        </div>
+        <div>
+            <md-button class="md-raised md-primary" ng-disabled="!started" ng-click="endQuizz()">End quizz</md-button>            
+        </div>   
+        <div>        
+        </div>
+        <div>
+          <a href="/logout">Logout</a>
+        </div>
+      </form>
+        
+      <div>
+          <h3>Registered users</h3>
+          <div>
+              <div>Name</div><div>Score</div>
+          </div>
+      </div>
+        
+    <md-whiteframe layout="column" layout-align="center center">
+    <% include includes/footer %>  
+  </body>
+</html>

@@ -1,0 +1,9 @@
+TODO
+====
+client admin on server side.
+receive answers and keep totals.
+display end score.
+display end score graph.
+
+styling with ng-material.
+use database.

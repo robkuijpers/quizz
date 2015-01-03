@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quizz - Dashboard</title>
+    <% include includes/header %>
+  </head>
+  <body ng-controller="DashboardController" ng-cloak>
+     <md-whiteframe class="md-whiteframe-z1" layout="column" layout-align="center center">
+       <h1>Quizz dashboard</h1>
+       <div>
+         <form method="post" action="login">
+            <h2>Login</h2>
+            <div><label for="username">Name:</label><input type="text" name="username" placeholder="Name" required></div>
+            <div><label for="password">Password:</label><input type="password" name="password" placeholder="Password" required></div>
+            <% if (message) { %>
+              <div><%= message %></div>
+            <% } %>
+            <div><input type="submit">Login</input></div>
+         </form>
+       </div>
+     </md-whiteframe>    
+     <% include includes/footer %>
+  </body>
+</html>

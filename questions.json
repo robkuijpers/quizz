@@ -1,0 +1,25 @@
+{
+    "questions": [
+        {
+            "question" : "Sum of 2 and 2?",
+            "options"  : [ "2", "4", "8", "16" ],
+            "answer"   : "2"
+        },
+        {
+            "question" : "Product of 3 and 2?",
+            "options"    : [ "5", "2", "3", "6" ],
+            "answer"     : "4"          
+        },
+        {
+            "question" : "What is the name?",
+            "options"    : [ "A", "B", "D", "Z" ],
+            "answer"     : "2"          
+        },
+        {
+            "question" : "How many not?",
+            "options"    : [ "3", "2", "7", "1" ],
+            "answer"     : "1"          
+        }        
+        
+    ]
+}

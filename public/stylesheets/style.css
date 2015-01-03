@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form { 
+    margin: 20px;
+}
+
+h2.title {
+    width: 100%;
+    margin: 0;
+    padding: 1.0em;
+    background-color: #E0E0E0;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+md-radio-group {
+  border: none;
+  display: block;
+  outline: none;
+}
+
+.md-whiteframe-z1 {
+    border-radius: 5px;
+}
+
+.rk-info-message {
+    color: blue;
+    margin: 32px 0 8px 8px;
+}
+
+.rk-error-message {
+    color: red;
+    margin: 32px 0 8px 8px;
+}

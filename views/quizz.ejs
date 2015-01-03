@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quizz</title>
+    <% include includes/header %>
+  </head>
+  <body ng-controller="QuizzController" layout="column" ng-cloak>
+    <md-whiteframe class="md-whiteframe-z1" layout="column" layout-align="center center">      
+      <h2 class="title"><%= title %></h2>    
+      <div layout="row" layout-align="">
+        <h3>Hello <%= name %></h3>
+        <md-progress-circular md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>
+      </div>      
+      <div ng-show="started && question == -1 && !ended">
+        {{instructions}}
+      </div>
+      <div ng-show="started && question >= 0">
+        <h3>Question {{question+1}} of {{questions.length}}</h3>
+        <form name="answerForm" novalidate ng-submit="submitAnswer()">
+            <div class="question">{{questions[question].question}}</div>
+            <md-radio-group ng-model="answer" required>
+                <md-radio-button class="answer" ng-repeat="a in questions[question].options" value="{{a}}">{{a}}</md-radio-button>
+            </md-radio-group>    
+            <div ng-show="answerForm.option.$error.required" class="rk-error-message">Please select an answer.</div>
+            <div>
+                <md-button class="md-raised md-primary" ng-disabled="isSubmitted || answerForm.$invalid">Submit answer</md-button>
+            </div>
+            <div class="rk-info-message">{{message}}</div>
+        </form>
+      </div>
+    </md-whiteframe> 
+    <% include includes/footer %>
+  </body>
+</html>
