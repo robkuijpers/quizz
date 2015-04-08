@@ -1,1 +1,7 @@
 node_modules
+bower_components
+src/bower_components
+dist
+release
+tmp
+*.log
